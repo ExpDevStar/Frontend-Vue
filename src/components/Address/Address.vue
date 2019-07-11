@@ -17,11 +17,13 @@
 
 						<div v-for="(person, idx) in people">
 							<tableRow
+								@removePerson="removePerson"
 								:index="idx+1"
 								:input-data="{ type:'person', data:person }"></tableRow>
 						</div>
 
 						<tableRow
+							@addPerson="addPerson"
 							flag="add"
 							:index="people.length + 1"
 							:input-data="{ type:'person', data:null }">
@@ -85,6 +87,22 @@
       }
     },
     methods: {
+      removePerson: function(index) {
+        this.people.splice(index-1, 1)
+			},
+
+			addPerson: function(data) {
+				let values = Object.values(data);
+
+				for(let i=0; i<values.length; i++) {
+				  if(values[i] === "") {
+				    alert("빈값을 입력하실 수는 없습니다.")
+				    return;
+					}
+				}
+
+        this.people.push(data)
+			}
     }
   }
 </script>
