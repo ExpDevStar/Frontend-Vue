@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1 class="md-display-3 title"> BCSDLAB FRONTEND <span class="highlight">Beginner Example</span></h1>
+		<v-header title="Vue.js Example Code"></v-header>
 		<div class="md-layout md-gutter">
 			<div
 				class="md-layout-item"
@@ -18,11 +18,13 @@
 
 <script>
 	import Card from './Components/Card';
+	import Header from '../SharedComponent/Header';
 
   export default {
     name: 'Main',
 		components: {
-      'card': Card
+      'card': Card,
+			'v-header': Header
 		},
     data () {
       return {
@@ -36,7 +38,7 @@
           {
             title: "CALENDAR ",
             link: "/calendar",
-            imgUrl: "https://www.mitchellcounty.org/wp-content/uploads/2018/04/Calendar-Background.jpg",
+            imgUrl: "https://media.gettyimages.com/photos/calendar-page-background-picture-id643126222?b=1&k=6&m=643126222&s=612x612&w=0&h=2NzlkCzSQ0foeHG_tjaf2vA4J3tgUaCSK28yTMMmYR0=",
             desc: "Just Calendar"
           },
           {

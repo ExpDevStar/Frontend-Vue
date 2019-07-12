@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1 class="md-display-3 title"> ADDRESS </h1>
+		<v-header title="ADDRESS"></v-header>
 		<div class="md-layout md-gutter">
 			<div class="md-layout-item">
 				<div class="table__container">
@@ -36,12 +36,14 @@
 </template>
 
 <script>
-	import TableRow from './Components/tableRow'
+	import TableRow from './Components/tableRow';
+  import Header from '../SharedComponent/Header';
 
   export default {
     name: 'Address',
 		components: {
-			'tableRow': TableRow
+			'tableRow': TableRow,
+      'v-header': Header
 		},
     data () {
       return {
@@ -110,7 +112,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 	.md-table + .md-table {
-		margin-top: 16px
+
 	}
 
 	.md-layout {
